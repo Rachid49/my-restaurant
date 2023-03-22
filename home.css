@@ -1,0 +1,929 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+/* -------------------NAV BAR---------------------- */
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0c4042 ;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+	left: 0;
+	right: 0;
+    box-shadow:0PX 0PX 6PX 0PX #000000e1;
+}
+
+.brand-title{
+    position: relative;
+    left: 20PX;
+    font-size: 25px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 0;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.navbar-links ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+    left: 5PX;
+}
+.navbar-links li{
+    list-style: none;
+}
+.navbar-links li a{
+    text-decoration: none;
+    color: #ffffff;
+    font-family:monospace;
+    letter-spacing: 1px;
+    font-size: 16px;
+    padding: 1rem;
+    display: block;
+    transition: background 0.4s;
+}
+.navbar-links li a:hover{
+    background-color: #00f2ff;
+    color: #000000;
+}
+.toggle-button{
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+.bar{
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.dropdown-menu{
+    background-color: #0c4042;
+    display: none;
+    height: 210PX;
+    
+}
+.dropdown-menu ul{
+    display: block;
+    width: 90%;
+}
+
+.navbar-links ul li:hover .dropdown-menu{
+    display: block;
+    position: absolute;
+    background: #0c4042;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.navbar-links .dropdown-menu ul li hr{
+    color: #0b1414;
+}
+
+/* ------------LOGIN AND SIGN UP-------------- */
+
+/* .Sign-up{
+    position: relative;
+    right: 35px;
+    color: #ffffff;
+    text-decoration: none;
+
+}
+.login{
+    position: relative;
+    right: 20px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.form{
+    font-family:monospace;
+    
+} */
+.searci-icon{
+    width: 10%;
+}
+.searci-icon img{
+    width: 26%;
+    cursor: pointer;
+}
+.login:hover{
+    color: #00f2ff;
+}
+.Sign-up:hover{
+    color: #00f2ff;
+}
+/* --------------NAVBAR FOR MOBILE------------ */
+
+@media screen and (max-width:640px){
+    .toggle-button{
+        display: flex;
+    }
+    .navbar-links{
+        display: none;
+        width: 100%;
+    }
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar-links ul{
+        width: 100%;
+        flex-direction: column;
+    }
+    .navbar-links li{
+        text-align: center;
+    }
+    .navbar-links li a{
+        padding: .5rem 1rem;
+    }
+    .navbar-links.active{
+        display: flex;
+    }
+   .form{
+    display: none;
+   }
+   .brand-title{
+    margin: 8PX;
+   }
+   .navbar-links ul li a:hover{
+    background-color: #555;
+    color: white;
+   }
+.img img{
+    display: none;
+}
+}
+/* ---------------HOME SECTION---------------- */
+
+.home{
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;   
+}
+.home .bg-img{
+    width: 100%;
+    height: 100vh;
+}
+.home-overlay{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    /* background-color: #00f2ff; */
+}
+.home-overlay .hello{
+    position: absolute;
+    left: 20%;
+    top: 0%;
+    width: 60%;
+    text-align: center;
+    text-transform: capitalize;
+    text-shadow: 3px 3px #000000;
+    font-size: 45px;
+    font-family: 'new Courier';
+    color: #ffffff;
+    letter-spacing: 10px;
+    font-weight: bolder;
+    margin-top: 12%;
+    
+}
+   
+.home-overlay .hello span{
+    transition: 0.3s linear;
+    cursor: pointer;
+}
+.home-overlay .hello span:hover{
+    -webkit-text-stroke: 2px #03e9f4;
+    color: transparent;
+    text-shadow: none;
+}
+
+.home-overlay .order-btn{
+    text-transform: uppercase;
+    position: absolute;
+    left:53%;
+    top: 60%;
+    padding: 7px 0;
+    border: 2px solid #00f2ff;
+    color: #000000;
+    border-radius: 20px;
+    width: 150px;
+    cursor: pointer;
+    font-family:monospace;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight:bold;
+    background-color: #00f2ff;
+    transition: 0.4s linear;
+
+}
+
+.home-overlay .order-btn:hover{
+    border-color: #03e9f4;
+    width: 165px;
+    background: #03e9f4;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+}
+
+
+/* BOOK BUTTON ANIMATION ________START */
+
+.home-overlay #book-btn {
+    position: absolute;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight:600;
+    font-family:monospace;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 1px;
+    left: 36%;
+    top: 60%;
+    transition: 0.5s linear;
+  }
+
+  .home-overlay #book-btn:hover {
+    background: #03e9f4;
+    color: #000000;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+  }
+
+  .home-overlay #book-btn span {
+    position: absolute;
+    display: block;
+  }
+  
+  .home-overlay #book-btn span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+.home-overlay #book-btn span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .home-overlay #book-btn span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .home-overlay #book-btn span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+/* BOOK BUTTON ANIMATION ________END */
+
+
+
+
+
+.search-overlay {
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    font-size: large;
+    border-color: white;
+    position: absolute;
+    top: 100%;
+    display: none;
+}
+.search-input-active{
+    display: block;    
+}
+.input-active:focus{
+    outline: none;
+}
+
+
+
+/* ---------------SPECIAL DISHES SECTION---------------- */
+
+.special-dishes{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    /* background-color: red; */
+}
+.special-dishes h2{
+    position: absolute;
+    left: 42%;
+    top: 5%;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 2px;
+
+}
+.special-dishes .box-dishes-card{
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    position: relative;
+    top: 15%;
+    left: -2%;
+}
+.special-dishes .dishes-card{
+    /* background-color: #00f2ff; */
+    position: relative;
+    width: 350px;
+    height: 240px;
+    box-shadow:0px 0px 3px 0px gray;
+    border-radius: 5px;
+    margin-bottom: 2%;
+    margin-left: 5%;
+    transition: 0.4s;
+}
+.special-dishes .dishes-card:hover{
+    box-shadow:0px 5px 10px 0px gray;
+}
+.special-dishes .dishes-card .card-logo{
+    width: 50px;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+}
+.special-dishes .dishes-card .dish-name{
+    position: absolute;
+    font-size: 25px;
+    top: 40%;
+    left: 23%;
+    color: #000000;
+}
+.special-dishes .dishes-card P{
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    color: #000000;
+}
+.special-dishes .dishes-card .dish-img{
+    width: 100%;
+    height: 0;
+    /* object-fit: cover; */
+    border-radius: 5px;
+    position: absolute;
+    /* top: -100%;  */
+    left: 0;
+    transition: 0.2s;
+
+}
+.special-dishes .dishes-card:hover .dish-img{
+    height: 100%;
+    top: 0;
+}
+/* ---------------SERVICES SECTION---------------- */
+.services {
+    width: 100%;
+    height: 140vh;
+    overflow: hidden;
+    position: relative;
+    /* background-color: #48ff00; */
+ }
+.services h2{
+    position: absolute;
+    color: #000000;
+    top: 8%;
+    left: 47%;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 14px;
+}
+
+.services .box-card{
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    position: relative;
+    top: 15%;
+    /* background-color: #00f2ff; */
+}
+
+.services .card {
+    position: relative;
+    width: 290px;
+    height: 355px;
+    box-shadow:0px 0px 3px 0px gray;
+    border-radius: 5px;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    cursor: pointer;
+
+    transform: translateX(-44px);
+    opacity: 0;
+    transition: 1s linear;
+
+}
+
+
+/* (((((((JS SHOW CARD)))))))) */
+.services .card.showCard{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+.services .card:hover{
+    box-shadow:0px 0px  5px 0px  #292828;
+}
+.services .card img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+
+.services .card .Product-name{
+    /* background-color: #2d9b1e; */
+    position: absolute;
+    top: 74%;
+    left: 3%;
+    text-transform: capitalize;
+    font-family: monospace;
+    font-size: 20px;
+  }
+.services .card .card-price{
+    color: #ffffff;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    font-size: 20px;
+    font-family:monospace;
+    text-align: center;
+    display: block;
+    background-color: #ff4800;
+    width: 90px;
+    height: 26px;
+    border-radius: 5px;
+
+}
+
+
+.services .card .card-btn{
+    position: absolute;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: large;
+    font-weight: 550;
+    color: #006e74;
+    border: 1px solid #006e74;
+    padding: 5px 10px;
+    left: 35%;
+    top: 88%;
+    border-radius: 6px;
+    transition: 0.3s linear;
+}
+.services .card-btn::before{
+    content: '';
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    background-color: #006e74;
+    top: 0;
+    left: 0;
+    border-radius: 2px;
+    z-index: -1;
+    transition: 0.3s linear;
+}
+.services .card-btn:hover::before{
+    width: 100%;
+}
+
+.services .card-btn:hover{
+    border-color: #006e74;
+    color: #ffff;
+}
+
+
+/* ---------------ABOUT SECTION---------------- */
+
+.about{
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+    /* background-color: gold; */
+}
+.about h2{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 3px;
+   position: relative;
+   top: 10%;
+}
+.about .about-imgs{
+    width: 40%;
+    height: 70%;
+    position:relative;
+    left:7%;
+    bottom:44%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+   transform: translateX(-50px);
+    opacity: 0;
+    transition: 1.5s;
+}
+.about .showElementFromLeft{
+    opacity: 1;
+    transform: translateX(0);
+}
+.about .about-imgs img{
+    width: 45%;
+    height: 47%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.about .text{
+    color: #000000;
+    width: 30%;
+    position: relative;
+    left: 55%;
+    top:17%;
+    font-size: 17px;
+    font-family:monospace;
+    text-transform: capitalize;
+
+    transform: translateX(50px);
+    opacity: 0;
+    transition: 1.5s;
+}
+/* (((((((JS SHOW ABOUT TEXT)))))))) */
+.about .text.showElementFromRight{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about .text span{
+    font-size: 23px;
+    font-weight: normal;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.about .text #btn{
+    position: absolute;
+    text-decoration: none;
+    top: 105%;
+    border: 2px solid #00f2ff;
+    padding: 8px 16px;
+    text-transform: capitalize;
+    font-size: smaller;
+    color: #0b1414;
+    border-radius:10px;
+    transition: 0.4s linear;
+}
+.about .text a:hover{
+    background-color: #00f2ff;
+}
+
+
+/* ---------------CONTACT SECTION---------------- */
+
+.contact{
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+    position: relative;
+}
+.contact iframe{
+    position: relative;
+    bottom: 45%;
+    left: 56%;
+    width: 38%;
+    height: 45%;
+
+    transform: translateX(50px);
+    opacity: 0;
+    transition: 1.5s;
+}
+.contact iframe.showElementFromRight{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.contact h2{
+    text-align: center;
+    position: relative;
+    top:10%;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 2px;
+}
+
+.contact form{
+    /* background-color: #ff274b; */
+    width: 40%;
+    height: 70%;
+    position: relative;
+    top: 20%;
+    left: 15%;
+
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: 1.4s;
+}
+.contact .showElementFromLeft{
+    opacity: 1;
+    transform: translateX(0);
+}
+.contact form p{
+    font-size: 23px;
+    text-transform: capitalize;
+    font-family: monospace;
+    font-weight: bold;
+
+}
+.contact form input{
+    width: 70%;
+    height: 10%;
+    border: 1px solid black;
+    transition: 0.4s;
+}
+.contact form input:focus{
+    width: 72%;
+    height: 10%;
+
+}
+.contact form textarea{
+    border: 1px solid black;
+    width: 70%;
+    height: 20%;
+}
+
+.contact form ::placeholder{
+    font-size: 15px;
+    position: absolute;
+    left: 10px;
+    top: 25%;
+}
+.contact form button{
+    width: 70%;
+    height: 10%;
+    color: white;
+    background-color: #000000;
+    transition: width 0.4s linear;
+}
+.contact form button:hover{
+    background-color: #000000f1;
+    border: none;
+    cursor: pointer;
+    width: 72%;
+}
+.contact #iframeP{
+    position: relative;
+    left: 56%;
+    bottom: 50%;
+    font-size: 23px;
+    text-transform: capitalize;
+    font-family: monospace;
+    font-weight: bold;
+    transform: translateX(50px);
+    opacity: 0;
+    transition: 1.5s;
+}
+.contact #iframeP.showElementFromRight{
+    opacity: 1;
+    transform: translateX(0);
+}
+.contact #iframeP span{
+    font-size: 16px;
+    
+}
+
+/* ----------------FOOTER SECTION---------------------- */
+
+footer{
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background-color: #0c4042;
+    display: flex;
+    justify-content: space-around;
+}
+.footer .text{
+    /* background-color: #ff274b; */
+    width: 20%;
+    height: 80%;
+    text-align: left;
+}
+.footer .text .logo{
+    position: relative;
+    top: 10px;
+    color: #ffffff;
+}
+
+.footer .text p{
+    position: relative;
+    top: 10%;
+    color: #ffffff;
+    font-family:monospace;
+    font-size: 13px;
+}
+
+.footer .text img{
+    width: 35px;
+    height: 35px;
+    position: relative;
+    top: 30%;
+    margin-left: 15px;
+    transition: 0.4s linear;
+}
+.footer .text img:hover{
+    transform: translateY(-5px);
+}
+
+
+
+
+.footer .product{
+    /* background-color: #39ff27; */
+    width: 20%;
+    height: 80%;
+    position: relative;
+    left: 5%;
+}
+.footer .product .head{
+    color: #ffffff;
+    font-family:monospace;
+    margin: 10%;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+.footer .product h4{
+    margin: 12%;
+}
+.footer .product a{
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: capitalize;
+    font-family:monospace;
+    transition: 0.4s;
+}
+.footer .product a:hover{
+    font-size: larger;
+    color: #000000;
+}
+
+.footer .links{
+    /* background-color: #fff127; */
+    width: 20%;
+    height: 80%
+}
+.footer .links .head{
+    margin: 10%;
+    color: #ffffff;
+    font-family:monospace;
+    text-transform: uppercase;
+}
+.footer .links h4{
+    margin: 12%;
+}
+.footer .links h4 a{
+    text-decoration: none;
+    color: #ffffff;
+    font-family:monospace;
+    transition: 0.4s;
+}
+.footer .links a:hover{
+    font-size: larger;
+    color: #000000;
+}
+
+
+
+.footer .address{
+    /* background-color: #4727ff; */
+    width: 20%;
+    height: 80%
+}
+.footer .address .head{
+    margin: 10%;
+    color: #ffffff;
+    font-family:monospace;
+    text-transform: uppercase;
+}
+.footer .address p{
+    position: absolute;
+    top: 20%;
+    color: #ffffff;
+    font-family:monospace;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @@@@@@@@@@@@@@@ MEDIA QUERIS FOR EVERYTHING @@@@@@@@@@@@@@@@@@@@ */
+@media screen and (max-width:600px){
+    .home .bg-img{
+       display: none;
+    }
+    .home-overlay .hello{
+        color: #000000;
+        text-shadow: 0px 0px #000000;
+        /* background-color: #00f2ff; */
+        width: 100%;
+        height: auto;
+        font-size: 35px;
+        top: 15%;
+        left: 0%;
+        letter-spacing: 1px;
+
+    }
+    .home-overlay .order-btn{
+        display: none;
+    }
+    .home-overlay #book-btn{
+        color: #000000;
+        top: 85%;
+        left: 30%;
+    }
+    .home-overlay{
+        height: 50vh;
+    }
+}
