@@ -1,0 +1,153 @@
+/* form{
+    box-shadow: 1px 0px 5px #00000062;
+    width: 30%;
+    height: 50vh;
+    position: relative;
+    border: none;
+    margin: auto;
+    border-radius: 1%;
+    
+}
+
+form h3{
+    text-transform: capitalize;
+    font-family:monospace;
+    font-size: 25px;
+    text-align: center;
+    margin: 4%;
+}
+form input{
+    width: 90%;
+    height: 12%;
+    margin-left: 3%;
+    border: 1px solid black ;
+    transition: 0.3s linear;
+}
+form h2{
+    font-family:monospace;
+    font-weight: bolder;
+    font-size: large;
+    margin: 0;
+    margin-left: 3%;
+
+}
+form a{
+    position: absolute;
+    top: 70%;
+    font-family:monospace;
+    font-weight: bolder;
+    font-size: large;
+    margin: 0;
+    margin-left: 3%;
+    text-transform: capitalize;
+}*/
+html {
+    height: 100%;
+  }
+  body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30, #243b55);
+  }
+ 
+
+
+
+  
+  .login-box {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    width: 400px;
+    height: 46vh;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-family: monospace;
+    font-size: 23px;
+    position: relative;
+    top: -10%;
+  }
+  
+  .login-box .user-box {
+    position: relative;
+    top: -20px;
+  }
+  
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 35px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    font-family:monospace;
+    border-radius: 1px;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+    font-family: monospace;
+  }
+  
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -27px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 13px;
+  }
+
+ form .submit {
+    background-color: #03929c;
+    border: none;
+    font-family:monospace;
+    font-weight: bold;
+    font-size: larger;
+    border-radius: 20px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 80%;
+    width: 80%;
+    height: 11%;
+    transition: 0.2s linear;
+}
+form .submit:hover{
+    box-shadow: 0 0 5px #03929c,
+    0 0 25px #03929c,
+    0 0 50px #03929c,
+    0 0 100px #03929c;
+    color: black;
+
+}
+
+form h5{
+    position: absolute; 
+    top: 63%; 
+    color: #ff0000;
+    font-family:monospace;
+    font-size: 15px;
+    text-transform: capitalize;
+    display: none;
+}

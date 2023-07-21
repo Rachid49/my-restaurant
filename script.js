@@ -1,72 +1,76 @@
+
+// ---------------NAV BAR--------------
+
+
 const toggleButton = document.getElementsByClassName('toggle-button')[0]
 const navbarLinks = document.getElementsByClassName('navbar-links')[0]
 toggleButton.addEventListener('click', ()=>{
-    navbarLinks.classList.toggle('active')
+    navbarLinks.classList.toggle('active');
+    toggleButton.classList.toggle('activeBtn')
 })
 
 
-
-
-
-// THIS CODE IS FOR SERVICES CARDS SECTION
- 
-const cards = document.querySelectorAll(".card")
+// ---------------SHOW EVERYTHING FROM LEFT--------------
+const showElement = document.querySelectorAll(".LeftShow")
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        entry.target.classList.toggle("showCard", entry.isIntersecting)
-        // if (entry.isIntersecting) observer.unobserve(entry.target)
-    })
-},
-{
-    threshold: 0.1,
-})
-
-cards.forEach(card => {
-    observer.observe(card)
-})
-
-
-// THIS CODE IS SHOWING ELEMENTS FROM right FOR ABOUT TEXT & CONTACT ADDRESS
-
-
-
-const aboutText = document.querySelectorAll(".text")
-
-const observerA = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        entry.target.classList.toggle("showElementFromRight", entry.isIntersecting)
-        // if (entry.isIntersecting) observer.unobserve(entry.target)
-    })
-},{
-    threshold: 0.2,
-})
-
-aboutText.forEach(aboutText => {
-    observerA.observe(aboutText)
-})
-
-
-const aboutImgForm = document.querySelectorAll(".about-imgs")
-
-const observerI = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        entry.target.classList.toggle("showElementFromLeft", entry.isIntersecting)
+        entry.target.classList.toggle("showElementsLeft", entry.isIntersecting)
         if (entry.isIntersecting) observer.unobserve(entry.target)
     })
 },{
     threshold: 0.2,
 })
 
-aboutImgForm.forEach(aboutImgForm => {
-    observerI.observe(aboutImgForm)
+showElement.forEach(showElement => {
+    observer.observe(showElement)
 })
 
 
-// ---------DISPLAYING SEARCH BAR
-const searchIcon = document.querySelectorAll('.searci-icon')[0];
-const searchOverlay = document.querySelectorAll('.search-overlay')[0];
 
-searchIcon.addEventListener('click',function(){
-    searchOverlay.classList.toggle('search-input-active')
-})
+
+// ---------DISPLAYING SEARCH BAR-----------
+const searchImg = document.querySelectorAll('.search-img')[0];
+const homeOverlaySearch = document.querySelectorAll('.home-overlay-search')[0];
+
+
+searchImg.addEventListener('click', function(){
+    homeOverlaySearch.classList.toggle('homeOverlaySearchOpen')
+});
+
+// SLIDING IMAGES
+var slatdeImg = document.getElementById('slatdeImg');
+var images = new Array(
+    "images/bg.jpg",
+    "images/bg12.jpg",
+    "images/bg3.jpg",
+    "images/bg5.jpg"
+);
+var len = images.length;
+var i = 0;
+
+function slider(){
+    if(i > len-1){
+        i = 0;
+    }
+    slatdeImg.src = images[i];
+    i++;
+    setTimeout('slider()',4000);
+}
+
+// ---------LOADER-----------
+
+// function loader(){
+//     document.querySelector('.loader-container').classList.add('loading-page');
+// }
+
+// function fadeOut(){
+//     setInterval(loader ,400);
+// }
+
+// window.onload = fadeOut;
+
+
+
+
+
