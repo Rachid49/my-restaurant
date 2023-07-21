@@ -1,0 +1,105 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+form{
+    box-shadow: 1px 0px 5px #00000062;
+    width: 30%;
+    height: 65vh;
+    /* background-color: whitesmoke; */
+    position: relative;
+    border: none;
+    margin: auto;
+    border-radius: 1%;
+}
+form h3{
+    text-transform: capitalize;
+    margin-top: 8%;
+    margin-bottom: 5%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+    text-align: center;
+}
+form input{
+    width: 90%;
+    height: 9%;
+    margin-left: 3%;
+    border: 1px solid black ;
+    transition: 0.3s linear;
+
+}
+form input:focus {
+    width: 95%;
+    outline-color: #03929c;
+}
+form h2{
+    font-family:monospace;
+    font-weight: bolder;
+    font-size: large;
+    margin: 0;
+    margin-left: 3%;
+    margin-top: 2%;
+}
+form .backHome{
+    margin: 0;
+    margin-left: 3%;
+    font-family:monospace;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: bolder;  
+    position: absolute; 
+    top: 76%; 
+}
+form h4{
+    position: absolute; 
+    top: 81%; 
+    margin-left: 3%;
+    color: rgb(21, 212, 21);
+    font-family:monospace;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: bolder; 
+    display: none;
+}
+form h5{
+    position: absolute; 
+    top: 81%; 
+    margin-left: 3%;
+    color: #ff0000;
+    font-family:monospace;
+    font-size: 13px;
+    text-transform: capitalize;
+    font-weight: bolder; 
+    display: none;
+}
+form a{
+    text-decoration: underline;
+    color: black;
+    font-size: 15px;
+}
+form a:hover{
+    color: #03929c;
+}
+form .submit{
+    background-color: #03929c;
+    cursor: pointer;
+    padding: 8px 0px;
+    border: none;
+    font-family:monospace;
+    font-weight: bold;
+    font-size: larger;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    color: white;
+    border-color: #03929c;
+    position: absolute;
+    top: 87%;
+}
+form .submit:hover{
+    box-shadow: 0 0 1px #03929c,
+    0 0 22px #03929c,
+    0 0 48px #03929c,
+    0 0 98px #03929c;
+    color: black;
+}

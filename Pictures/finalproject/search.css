@@ -1,0 +1,93 @@
+.card{
+    position: relative;
+    width: 300px;
+    height: 355px;
+    box-shadow:0px 0px 3px 0px gray;
+    border-radius: 5px;
+    margin:  .6rem;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 2px;
+}
+.card img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.card .Product-name{
+    position: absolute;
+    top: 74%;
+    left: 40%;
+    text-transform: capitalize;
+    font-family: monospace;
+    font-size: 20px;
+}
+.card .card-price{
+    color: #ffffff;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    font-size: 20px;
+    font-family:monospace;
+    text-align: center;
+    display: block;
+    background-color: #ff4800;
+    width: 90px;
+    height: 26px;
+    border-radius: 5px;
+    margin: 0;
+}
+.card .card-btn{
+    position: absolute;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: large;
+    font-weight: 550;
+    color: #021b1d;
+    border: 2px solid #006e74;
+    padding: 5px 10px;
+    left: 35%;
+    top: 88%;
+    border-radius: 6px;
+    transition: 0.3s linear;
+}
+.card .card-btn::before{
+    content: '';
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    background-color: #006e74;
+    top: 0;
+    left: 0;
+    border-radius: 2px;
+    z-index: -1;
+    transition: 0.2s linear;
+}
+
+.card .card-btn:hover::before{
+    width: 100%;
+}
+
+.card .card-btn:hover{
+    border-color: #006e74;
+    color: #ffffff;
+}
+
+.card .product-type{
+    position: absolute;
+    top: 74%;
+    left: 3%;
+    text-transform: capitalize;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+p{
+    position: absolute;
+}
